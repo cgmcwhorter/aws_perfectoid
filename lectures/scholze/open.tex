@@ -1,0 +1,227 @@
+% !TEX root = ../../main/aws_perfectoid.tex
+\section{Opening Lecture}
+
+Historic Remarks about the genesis of the paper ``Perfectoid Spaces''
+
+or why perfectoid spaces are a failed theory.
+
+In 2007, Scholze went to Bonn as an undergrad and studied under M. Rapport. 
+
+
+Let $X$ be a smooth projective scheme over $\Q_p$. Fix $i \geq 0$ and let $l \neq p$ be a prime. Consider the $\Gal(\ov{\Q}_p/\Q_p)$-representation $V= H_\et^i(X_{\ov{\Q}_p}, \ov{\Q}_l)$. There is a weight decomposition given by the following: if $\Phi \in \Gal(\ov{\Q}_p/\Q_p)$ is a geometric Frobenius, then 
+	\[
+	V= \bigoplus_{j=0}^{2i} V_j,
+	\]
+where $\Phi$ acts through the Weil numbers of weight $j$ on $V_j$. 
+
+
+Rapport-Zink (1980) if $X$ has semistable reduction 
+
+de Joung (1995) in general (reduction to semistable case).
+
+
+Rapport gave Scholze the following problem to think about:
+
+There is a monodromy operator $N: V \to V(\pm 1)$ (Tate twist) coming from the action of the inertia subgroup. In particular, $N: V_j \to V_{j-2}$. Then
+	\[
+	\forall j=0,\ldots,i: N^j: V_{i+j} \ma{\sim} V_{i-j}.
+	\]
+
+
+
+
+
+
+
+
+
+\begin{conj}[Weight-Monodromy Conjecture]
+Let $X$ be a smooth projective scheme over $\Q_p$. Fix $n \geq 0$ and $l \neq p$ a prime. Consider the $\Gal(\ov{\Q}_p/\Q_p)$-representation $V= H_\et^i(X_{\ov{\Q}_p}, \ov{\Q}_l)$
+\end{conj}
+
+
+
+\begin{ex} \hfill
+\begin{enumerate}[(i)]
+\item If $X$ has good reduction, i.e. there exists a smooth projective $\fX/\Z_p$ with generic fiver $X$, then
+	\[
+	\begin{tikzcd}
+	V  \arrow[draw=none]{r}[sloped,auto=false]{\Large\cong} & H_\et^i(\fX_{\ov{\F}_p}, \ov{\Q}_l) \\
+	\Gal(\ov{\Q}_p/\Q_p) \arrow[symbol=\scalebox{1.5}{$\circlearrowleft$}]{u} \arrow[two heads]{r}  & \Gal(\ov{\F}_p/\F_p) \arrow[symbol=\scalebox{1.5}{$\circlearrowleft$}]{u}
+	\end{tikzcd}
+	\]
+so that the inertia group acts trivially. 
+
+But then $N=0$
+
+$\forall j=0$, $N^j=0: V_{i+j}' \ma{\sim} V_{i-j}$
+
+so equiv, $V_j=0$ $\forall j \neq i$.
+
+i.e. $V= V_i$.
+
+But this follows from the Weil conjectures for $\fX_{\F_p}$.
+
+\item If $X= E$ is an elliptic curve with multiplicative reduction
+
+`$E= \G_m/q^\Z$', $0 \neq q \in \Q_p$, $|q|<1$ as rigid-analytic/adic spaces
+
+Then 
+	\[
+	H^1_\et(E_{\ov{\Q}_p}, \ov{\Q}_l)= H^1_\et(\G_{m,\ov{\Q}_p/q^\Z}, \ov{\Q}_l).
+	\]
+Then by Hochschild-Serre spectral sequence
+	\[
+	H^i( \Z, \underbrace{H_\et^j(\G_{m, \ov{\Q}_p}, \ov{\Q}_l)}_{=\begin{cases} \ov{\Q}_l, & j=0 \\ \ov{\Q}_l(-1), & j=1 \\ 0, & \text{otherwise} \end{cases}} )  \Longrightarrow H^{i+j}_{\et}(\G_{m, \ov{\Q}_p/q^\Z}, \ov{\Q}_l).
+	\]
+with trivial $\Z$-action.
+
+
+% Picture
+
+So 
+	\[
+	0 \ma{} \ov{\Q}_l \ma{} H_\et^1(E_{\ov{\Q}_p}, \ov{\Q}_l) \ma{} \ov{\Q}_l(-1) \ma{} 0.
+	\]
+So $V_2= \ov{\Q}_l(-1)$, $V_0= \ov{\Q}_l$
+
+Splitting $V= V_0 \oplus V_2$ depends on choice of $\Phi$.
+\end{enumerate}
+\end{ex}
+
+
+Weight-monodromy predicts
+$N: V_2 \cong V_0$
+can be checked by hand. Use that inertia action is trivial on $l$-power roots of $q$ for $i= 1,2$. 
+
+
+
+\begin{rem} \hfill
+\begin{enumerate}[(i)]
+\item Conjecture is known for $i= 1,2$.
+dim 1: reduce to abelian varieties or curves and use N\'eron models/semistable models.
+dim 2: Rapport-Zink $+$ de Jong.
+
+\item Known in equal characteristic $p$, i.e. over $\F_p\laur{f}$.
+
+Proved in Deligne's Weil 2 paper, uses that $L$-functions over function fields have good properties.
+
+\item Conversely, weight-monodromy conjectures critical to understanding local factors of Hasse-Weil zeta functions at places of bad reduction ($\Leftrightarrow$ the Hasse-Weil zeta function ``has no poles in region of absolute convergence.'')
+\end{enumerate}
+\end{rem}
+
+
+Rapport's suggestion: Try to reduce to case of equal characteristic after base change to some very ramified $K/\Q_p$. 
+
+
+Idea: If $\fX/\O_K$ integral (semistable, say) model of $X \times_{\Q_p} K$, then $\fX \times_{\spec \O_K} \spec \O_K/p$ lives over $\O_K/p \cong \F_q[t]/t^e$, where $e$ is the ramification index of $K/\Q_p$. 
+
+If $e \gg 0$, this is almost $\F_p\ps{t}^0$. 
+
+Of course, this does not really work, as even if $e$ is large, still not deform
+
+$\fX \times_{\spec \O_K} \spec \O_K/p$ from $\O_K/p= \F_p[t]/t^e$ to $\F_p\ps{t}$.
+
+Usually, there are (a lot of) obstructions.
+
+Also, in the end need to relate $V= H_\et^i(X_{\ov{\Q}_p}, \ov{\Q}_l)$ acting on $\Gal(\F_p\laur{t}^{\sep}/\F_p\laur{t})$, where $X^1/\F_p\laur{f}$ is the generic fiber of deformation.
+
+
+In semistable case, can use log-geometry to do this (related to isomorphism of tame quotients of $\Gal(\ov{\Q}_p/\Q_p)$ and $\Gal(\F_p\laur{t}^\sep/\F_p\laur{t})$).
+
+
+Turning these ideas in my head, lead 
+
+
+\begin{thm}[Fontaine-Wintenberger]
+$\Gal(\ov{\Q}_p/\Q_p(p^{1/p^\infty})) \cong \Gal(\F_p\laur{f}^\sep/\F_p\laur{t})$, and even canonically.
+\end{thm}
+
+proof involves Fontain's construction like
+	\[
+	\plim_{\Frob} \O_{\ov{\Q}_p}/p. 
+	\]
+Hard to understand what it means. Later, I learned from Faltings that
+
+\begin{thm}
+	\[
+	\pi^\et(\spec \Q_p(p^{1/p^\infty}) \langle T^{\pm1/p^\infty} \rangle) \cong \pi^\et(\spec \F_p\laur{t} \langle T^{\pm 1} \rangle
+	\]
+\end{thm}
+
+
+Things started to resolve after I realized the following proof of Fontaine-Winterberger's Theorem
+
+$\{ \text{finite \'etale } \Q_p(p^{1/p^\infty})\text{-alg} \}$
+$\{ \text{almost finite \'etale } \Z_p[p^{1/p^\infty}]\text{-alg} \}$
+$\{ \text{almost finite \'etale } \Z_p[p^{1/p^\infty}]/p\text{-alg} \}$
+$\{ \text{almost finite \'etale } \F_p[t^{1/p^\infty}]/t\text{-alg} \}$
+$\{\text{finite \'etale } \F_p\laur{t}(t^{1/p^\infty})\text{-alg} \}$
+$\{\text{finite \'etale } \F_p\laur{t}\text{-alg} \}$
+
+
+This suggested what to do in the relative case. Find some notion of `perfectpod'. 
+
+$\{ \text{perfectoid } \Q_p(p^{1/p^\infty})\text{-alg} \}$
+$\{ \text{perfectoid almost } \Z_p[p^{1/p^\infty}]\text{-alg} \}$
+(needs unique lifting property)
+$\{ \text{perfectoid almost } \Z_p[p^{1/p^\infty}]/p\text{-alg} \}$
+$\{ \text{perfectoid almost } \F_p[t^{1/p^\infty}]/t\text{-alg} \}$
+$\vdots$
+$\{ \text{perfectoid } \F_p\laur{t}(t^{1/p^\infty})\text{-alg} \}$
+
+If $R$ perfectoid (almost) $\Z_p[p^{1/p^\infty}]/p$-algebra, then cotangent complex of perfectoid almost $L_{R/(\Z[p^{1/p^\infty}]/p)}= 0$.
+
+
+\begin{lem}[Gabber-Romero]
+If $S \to R$ is a map of $\F_p$-algebras that is ``relatively perfect'', i.e. relative Frob $\Phi_{R/S}: R \otimes_S ??? \ma{\sim} R$ is an isomorphism, then $L_{R/S} \cong 0$.
+\end{lem}
+
+\pfsk $\Phi_{R/S}$ isomorphism of $L_{R/S}$ but also equal as $d(x^p)= px^{p-1} \;dx=0$.
+
+
+\begin{dfn}
+A perfectoid $\Q_p(p^{1/p^\infty})$-algebra is a uniform Banach $\Q_p(p^{1/p^\infty})$-algebra $R$ such that $(R^0/p)/(\Z_p[p^{1/p^\infty}]/p)$ is relatively perfect, where $R^0$ is the set of powerbounded elements in $R$, equivalently, $\Phi: R^0/p \to R^0/p$, given by $x \mapsto x^p$, is surjective. 
+\end{dfn}
+
+
+\begin{cor}
+Set of $R$ perfectoid $\Q_p(p^{1/p^\infty})$-algebra mapping to $R^\flat$ set of perfectoid $\F_p\laur{t}(t^{1/p^\infty})$-algebras.
+\end{cor}
+
+This can be made explicit in terms of Fontaine's functor:
+	\[
+	R^\flat = \plim_{\Frob}(R^0/p) \otimes_{\F_p\ps{t}[t^{1/p^\infty}]} \F_p\laur{t}(t^{1/p^\infty}).
+	\]
+pass to geometry. 
+
+\begin{cor}
+$(\P^{n,\ad}_{\F_p\laur{t}})_\et = \plim_\varphi (\P^{n,\ad}_{\Q_p(p^{1/p^\infty})})_\et$ 
+$\varphi(x_0 : \cdots : x_n)= (x_0^p : \cdots : x_n^p)$
+\end{cor}
+
+Now $X \subset \P^n_{\Q_p}$ is your smooth projective variety. 
+	\[
+	\begin{tikzcd}
+	\P^n_{\F_p\laur{t}}  \arrow{r}{\pi} & \P^n_{\Q_p(p^{1/p^\infty})} \\
+	\pi^{-1}(X_{\Q_p(p^{1/p^\infty})} \arrow[symbol=\scalebox{1.5}{$\circlearrowleft$}]{u} \arrow{r}  & X_{\Q_p(p^{1/p^\infty})} \arrow[symbol=\scalebox{1.5}{$\circlearrowleft$}]{u}
+	\end{tikzcd}
+	\]
+
+Applying Deligne to bottom left
+
+Problem: This is not algebraic. But how far can it be away from algebraic?
+
+Easy case: If $X$ is complete intersection, then any $\ep$-neighborhood of $\pi^{-1}(X_{\Q_p}p^{1/p^\infty})$, there are algebraic varieties of same dimension enough to conclude. 
+
+
+
+
+
+
+
+
+
+
+
+

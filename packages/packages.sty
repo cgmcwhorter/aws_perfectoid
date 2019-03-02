@@ -6,7 +6,9 @@
 	amsthm,
 	amssymb,
 	enumerate,
-	geometry
+	geometry,
+	relsize,		% Scaling
+	stmaryrd		% Power Series Brackets
 }
 \usepackage[usenames,dvipsnames]{xcolor}
 \definecolor{ArzBlue}{RGB}{0,51,102}
@@ -75,9 +77,16 @@
 % -------------------
 % Tikz
 % -------------------
-\usepackage{tikz}
+\usepackage{tikz,tikz-cd}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
+\tikzset{%
+    symbol/.style={%
+        ,draw=none
+        ,every to/.append style={%
+            edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
+    }
+}
 
 
 % -------------------

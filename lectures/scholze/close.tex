@@ -1,0 +1,202 @@
+% !TEX root = ../../main/aws_perfectoid.tex
+\section{Closing Lecture}
+
+
+
+Where do we go from here?
+
+For example, Yves Andr\'e has recently used perfectoid spaces to prove the following of Hochester (73):
+
+\begin{thm}[Direct Summand Conjecture]
+Let $R$ be a regular ring, $R \hra S$. Then $R \hra S$ has a splitting as $R$-modules.
+\end{thm}
+
+The forward direction is descent along $R \to S$.
+
+Part of Hochster's ``homological conjectures'' refined by Bhatt, Ma, Schwede, \dots
+
+developed theory of test ideals in mixed characteristic
+
+also: connections to algebraic toplogy via topological hochschild homology
+
+but for the rest of talk, let's concentrate on ``mixed-characteristic shtukas''
+
+History of shtukas: function fields
+
+Let $C/\F_q$ be a projective smooth geometrically coneccted. Let $G/\F_q$ be reductive groups, e.g. $G= \GL_2$ cufve. moduli space of shtukas over $C$ with one leg. 
+	\[
+	f: \sht_{\cdots}^{\cdots} \ma{} C.
+	\]
+alongue of Shumura varieties
+	\[
+	\sh \ma{} \spec \Z
+	\]
+$R^i f_* \ov{\Q}_l \circlearrowleft \pi_q(C)= \Gal(\ov{F}/F)^{curv}$
+
+	\[
+	\begin{tikzcd}
+	R^if_* \ov{\Q}_l \arrow[symbol=\scalebox{1.5}{$\circlearrowleft$}]{r} & \pi_q(C) \arrow[draw=none]{r}[sloped,auto=false]{\Large\cong} & \Gal(\ov{F}/F)^{curv} \\
+	G(\A) \arrow[symbol=\scalebox{1.5}{$\circlearrowleft$}]{u} & & 
+	\end{tikzcd}
+	\]
+where $F$ is the function field of $C$ and $\A= \A_F$ are the ad\'eles of $F$.
+
+\begin{thm}[Drinfeld, L. Lafforge\dots]
+$R^i f_* \ov{Q}_l= \oplus_{*} \pi \otimes \sigma(\pi)$ $\circlearrowleft \Gal(\ov{F}/F)$
+* certain automorphic cpr $\pi$ of $G(A)$
+\end{thm}
+
+This association 
+$\{\text{autom. rep. of }G(\A)\}$ $\{\text{Gal rep}\}$
+$\pi \mapsto \sigma(\pi)$.
+define the global Langlands correspondence 
+(in some cases)
+
+Unfortunately, not \emph{all} autmorphic $\pi$.
+
+Insight of Drinfeld: Cal get all $\pi$ if one looks at spaces of shtukas with two legs.
+
+2 legs:
+	\[
+	f: \sht_{\cdots}^{\cdots} \to C \times C
+	\]
+
+
+	\[
+	\begin{tikzcd}
+	R^if_* \ov{\Q}_l \arrow[symbol=\scalebox{1.5}{$\circlearrowleft$}]{r} & \pi_1(C \times C/\phi^\Z) \arrow[draw=none]{r}[sloped,auto=false]{\Large\cong} & \pi_1(C) \\
+	G(\A) \arrow[symbol=\scalebox{1.5}{$\circlearrowleft$}]{u}
+	\end{tikzcd}
+	\]
+
+where congruence Drinfeld's lemma
+
+\begin{thm}[Same people]
+For good choices of data
+	\[
+	R^if_* \ov{\Q}_l = \bigoplus_* \pi \otimes \sigma(\pi) \otimes o(\pi)^V
+	\]
+*  all cuspidal automorphic reprep of $G(\A)$ and $\pi_1(C) \circlearrowleft \sigma(\pi)$ and $\pi_!(C) \circlearrowleft o(\pi)^V$
+\end{thm}
+
+
+Get global langland's coorespondence for 
+$\GL_2$: Drinfeld
+$\GL_n$: L. Lafforgue
+any $G$: V. Lafforgue
+
+We would love to do the same over number fields.
+
+Obvious problem: what is the analogue of $C \otimes_{\F_q} C$?
+
+Magic of diamonds: Can we make sense of not $\spec \Z \times \spec \Z$ but at last of $\spec \Q_p \times_{\F_1} \spec \Q_p$
+(or even $\spec \Z_p \times \spec \Z_p=$ compeltion at $(p_1p)$).
+
+Namely, can take product $\spd \Q_p \times \spd \Q_p$ in category of diamons get something 2-dimensional. 
+
+	\[
+	\spd \Q_p \times \spd \Q_p = \spd \Q_p \times \spd \Q_p^{tet}/ \un{\Z}_p^* = \spd \Q_p \times \spd \F_p\laur{t^{1/p^\infty}}/ \un{\Z}_p^*= (\tilde{\D}_{\Q_p}^*)^\diamond/ \un{\Z}_p^*.
+	\]
+where last is perfectoid punctured open unit disk/$\Q_p$
+
+analogue of Drinfeld's lemma:
+
+\begin{thm}
+$\pi_1(\spd \Q_p \times \spd \Q_p/\varphi^\Z) \cong \pi_1(\spd \Q_p) \times \pi_1(\spd \Q_p) = \Gal(\ov{\Q}_p/\Q_p) \times \Gal(\ov{\Q}_p/\Q_p)$. Equivantely, 
+	\[
+	\pi_1(\tilde{\D}_{\Q_p}^*/\Q_p^*)= \Gal(\ov{\Q}_p/\Q_p)^2.
+	\]
+$\Q_p^*= \un{\Z}_p^* \times \varphi^\Z= p^\Z$
+or $\pi_1(\tilde{\D}_{\C_p}^*/ \un{\Q}_p^*)= \Gal(\ov{\Q}_p/\Q_p)$
+\end{thm}
+
+moduli spaces of local, mixed class shtukas with one leg
+	\[
+	\sht_{\cdots}^{\cdots} \ma{} \spd \Q_p.
+	\]
+There turn out to be (generalizations of) Rapport-ZInk spaces (local $p$-adic analogues of Shumura varities)
+
+
+Example (lubin-tate spaces)
+
+Let $H/\ov{\F}_p$ 1-dimensional formal group of height $n$ (then is $p$-div. group)
+
+deformation space of $H$:
+
+	\[
+	\fX_H \cong \spf W(\ov{F}_p) \ps{u_1,\ldots,u_{k-1}}
+	\]
+generic fibre $\cM_H$ $(n-1)$-dimensional open unit disc
+
+tower
+	\[
+	\cdots \ma{} \cM_{H,2} \ma{} \cM_{H,0}= \cM_H
+	\]
+$\cM_{H,m}$ classifies isomorphisms
+	\[
+	\cH[p^m] \cong (\Z/p^m\Z)^n,
+	\]
+where $\cH$ universal deformation of $H$.
+
+	\[
+	\cM_{H,\infty}= \plim_m \cM_{H,m}
+	\]
+perfectoid space (S.-Weinstein)
+
+\begin{thm}[S., Weinstein]
+Let $C/\Q_p$ algebraically closed complete extension, let $\infty \in FF_{C^\flat}$ Fargue-Fontaine corresponding to $C^\flat$. Then
+	\[
+	\cM_{H,\infty}(C)= \{ \O^n \stackrel{f}{\hra} \O(1/n) \text{ sthm coker f is supported at }\infty\}
+	\]
+\end{thm}
+
+This can be also said in terms of shtukas with one leg at $\infty$
+
+several legs: there is no obstruction to considering moduli spaces of shtukas with any number of legs.
+
+Test objects: $S \in \pfd= \{ \text{perfectoid spaces of char }p\}$
+legs at $s$-valued $x_1,\ldots,x_n: S \to \spd \Q_p$ of $\spd \Q_p$
+
+These correspond to untilts $S_1^\#,\ldots,S^\#_n$ of $S$.
+
+graph of $x_i S \to \spd \Q_p Y_S= S \times \spd \Q_p$
+
+closed immersions of adic spaces
+$S_i^\# \ma{\sim} S$
+can consider $\varphi$-modules over $Y_S$ (or compactification of it) with poles zeroes at the divisors. 
+
+$f: \sht_{\cdots}^{\cdots} \ma{} \spd \Q_p \times \spd \Q_p$
+
+	\[
+	\begin{tikzcd}
+	R^if_* \ov{\Q}_l \arrow[symbol=\scalebox{1.5}{$\circlearrowleft$}]{r} & \pi_1(\spd \Q_p \times \spd \Q_p/\phi^\Z) \\
+	G(\Q_p) \arrow[symbol=\scalebox{1.5}{$\circlearrowleft$}]{u} & \Gal(\ov{\Q}_p/\Q_p)^2 \arrow[draw=none]{u}{\rotatebox{90}{$\mathlarger{=}$}}
+	\end{tikzcd}
+	\]
+	
+	
+\begin{thm}
+$\pi_0(THH(\O_C)_p^\wedge)^{hS^1}= \A_{inf}$
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
