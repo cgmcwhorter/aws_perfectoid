@@ -1,7 +1,12 @@
-\documentclass[11pt,letter,twoside]{article}
-\usepackage{../packages/packages}
-\usepackage{../packages/symb}
+\documentclass[11pt,letterpaper,twoside]{article}
+\usepackage[tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in]{geometry}
+\usepackage{../style/packages}
+\usepackage{../style/commands}
+\setbool{noteonly}{false}
 
+% -------------------
+% Content
+% -------------------
 \begin{document}
 
 % Cover Photo
@@ -19,40 +24,70 @@
 % Lectures
 % -------------------
 
+% Lecture Notes
+\thispagestyle{empty}
+\part{Talk Notes} 
+    \newpage 
+	\setcounter{page}{1}
+
 % Scholze
-\input{../lectures/scholze/open.tex}
-\input{../lectures/scholze/close.tex}
+\input{../lectures/scholze/lec1/open.tex}
+\input{../lectures/scholze/lec2/close.tex}
 
 
 % Bhatt
-\input{../lectures/bhatt/lec1}
-\input{../lectures/bhatt/lec2}
-\input{../lectures/bhatt/lec3}
-\input{../lectures/bhatt/lec4}
+\input{../lectures/bhatt/lec1/lec1}
+\input{../lectures/bhatt/lec2/lec2}
+\input{../lectures/bhatt/lec3/lec3}
+\input{../lectures/bhatt/lec4/lec4}
 
 
 % Caraiani
-\input{../lectures/caraiani/lec1}
-\input{../lectures/caraiani/lec2}
-\input{../lectures/caraiani/lec3}
-\input{../lectures/caraiani/lec4}
+\input{../lectures/caraiani/lec1/lec1}
+\input{../lectures/caraiani/lec2/lec2}
+\input{../lectures/caraiani/lec3/lec3}
+\input{../lectures/caraiani/lec4/lec4}
 
 
 % Kedlaya
-\input{../lectures/kedlaya/lec1}
-\input{../lectures/kedlaya/lec2}
-\input{../lectures/kedlaya/lec3}
-\input{../lectures/kedlaya/lec4}
+\input{../lectures/kedlaya/lec1/lec1}
+\input{../lectures/kedlaya/lec2/lec2}
+\input{../lectures/kedlaya/lec3/lec3}
+\input{../lectures/kedlaya/lec4/lec4}
 
 
 % Weinstein
-\input{../lectures/weinstein/lec1}
-\input{../lectures/weinstein/lec2}
-\input{../lectures/weinstein/lec3}
-\input{../lectures/weinstein/lec4}
+\input{../lectures/weinstein/lec1/lec1}
+\input{../lectures/weinstein/lec2/lec2}
+\input{../lectures/weinstein/lec3/lec3}
+\input{../lectures/weinstein/lec4/lec4}
 
 
+% -------------------
+% Course/Project Outlines
+% -------------------
+\ifbool{noteonly}{}{%
+\newpage
+\thispagestyle{empty}
+\part{Course/Project Outlines \& Lecture Notes}
+\newpage
 
+%\setcounter{section}{1}
+
+%% Poonen
+%\phantomsection
+%\addtocounter{section}{1}
+%\addcontentsline{toc}{section}{\protect\numberline{\thesection} Bjorn Poonen}
+%\phantomsection
+%\setcounter{subsection}{1}
+%\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Lecture Notes}
+%\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/poonen/p-adic_approach.pdf}
+
+}
+
+% -------------------
+% Bibliography
+% -------------------
 \newpage
 \nocite{*}
 \printbibliography

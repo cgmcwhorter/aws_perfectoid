@@ -1,0 +1,209 @@
+% !TEX root = ../../../main/aws_perfectoid.tex
+\newpage
+\section{Bhargav Bhatt: $p$-adic Hodge Theory}
+\subsection{Lecture 1}
+
+Hodge Decomposition
+
+$X/\C$ smooth projective curve
+
+\begin{thm}
+There exists a natural isomorphism $H^n(X\an, \Q) \otimes \C \cong \bigoplus_{i+j=n} H^i(X, \Omega^j_{X/\C})$
+\end{thm}
+
+\begin{ex}
+$X=E$ elliptic curve over $\C$ then $E= \C/\Lambda$
+\end{ex}
+
+
+\begin{thm}
+	\[
+	\begin{tikzcd}
+	H^0(X,\Omega^1_X) \arrow[hook]{r} & H^1(X\an,\Q) \otimes \C \\
+	\C \omega \arrow[draw=none]{u}[sloped,auto=false]{=} & \Hom(\Lambda, \C) \arrow[draw=none]{u}[sloped,auto=false]{=} \\
+	\omega \arrow[mapsto]{r} & \ds r \in \Lambda \mapsto \int_\gamma \omega
+	\end{tikzcd}
+	\]
+\end{thm}
+
+
+Highly Transcendental 
+
+
+\begin{cor}
+Say $f: X \to Y$ of smooth projective variety and $f^*: H^n(Y, \Q) \ma{\sim} H^n(X,\Q)$ then $H^i(X,\Omega^j_X) \rma{\sim} H^i(Y,\Omega_Y^j): f^*$ for all $i+j=n$
+\end{cor}
+
+
+\cetale Cohomology
+
+Say $X$ is a scheme
+$A \in \{ \Z/n\Z, \Z_p, \Q_p \}$
+Grothendieck then $H^*(X_\et, A)$ algebraically defined 
+
+\begin{thm}[Artin]
+Let $X/\C$ be a variety then $H^*(X_\et,A) \ma{\sim} H^*(X\an,A)$.
+\end{thm}
+
+Upshot: Say $X$ is defined over $\Q$
+
+Theorem $+$ epsilon there exists a natural action $G_\Q$ on $H^*(X\an,A)$.
+
+
+\begin{ex}
+\begin{enumerate}[(i)]
+\item $X=E$ elliptic curve over $\C$ but defined over $\C$. Therefore, $E= \C/\Lambda$.
+	\[
+	\begin{aligned}
+	H^1(X\an, \Z/n\Z)&= \Hom(H_1(X\an, \Z/n\Z), \Z/n\Z) \\
+	&\cong \Hom(\Lambda, \Z/n\Z) \\
+	&\cong E[n]^\vee
+	\end{aligned}
+	\]
+Theorem then $E[n]$ is defined over $\ov{\Q}$. Get action $G_\Q$ on $E[n]$.
+
+Set $T_pE= \plim E[p^n]$. Therefore, get a constant $G_\Q$-action on $T_pE$ if and only if dual to the $G_\Q$-action on $H^1(X\an, \Z_p)$. 
+
+\item $X=\G_m$ some analysis shows
+	\[
+	H^1(\G_n\an, \Z/n\Z) \cong \mu_n^\vee
+	\]
+Set $\Z_p(1)= \plim_n \mu_{p^n}$.
+Therefore, get $G_\Q$-action on $\Z_p(1)$ if and only if $G_\Q$-action on $H^1(X\an, \Z_p)$
+
+
+Notation: For any $\Z_p$-algebra $R$, set $R(i):= R \otimes_{\Z_p} \Z_p(1)^i$
+
+Note: if $G_\Q$ acts on $R$, it also acts on $R(i)$
+
+
+\item $X= \P^1$
+	\[
+	H^2(\P\an, \Q_p) \cong H^1(\G_m\an, \Q_p) \cong \Q_p(-1)
+	\]
+as $G_\Q$-modules
+More generally, if $X$ smooth projective of dimension $d$, then 
+	\[
+	H^{2d}(X\an, \Q_p) \cong \Q_p(-d)
+	\]
+\end{enumerate}
+\end{ex}
+
+
+Hodge-Tate Decomposition
+
+Fix a prime $p$, $K/\Q_p$ finite extension
+	\[
+	K \subset \ov{K} \subset \hat{\ov{K}}= \C_p
+	\]
+$G_K= \Gal(\ov{K}/K)$ acts on $\ov{K}$ and $G_K$ acts on $\C_p$.
+
+
+\begin{thm}[Hodge-Tate Decomposition]
+Say $X/K$ is a smooth projective variety, then there is a natural $G_K$-equivariant isomorphism
+	\[
+	H^n(X_{\ov{K}}, \Q_p) \otimes_{\Q_p} \C_p \cong \bigoplus_{i+j=n} H^i(X, \Omega^j_{X/K} \otimes_K \C_p(-1)
+	\]
+where $G_K$ acts in the natural way on both sides. 
+\end{thm}
+
+To use this theorem use
+
+\begin{thm}[Tate]
+Fix $i \neq j \in \Z$
+	\[
+	\begin{aligned}
+	\Hom_{G_K}(\C_p(i), \C_p(j))&= 0 \\
+	\Ext_{G_K}^1(\C_p(i),\C_p(j))&= 0
+	\end{aligned}
+	\]
+\end{thm}
+
+
+\begin{ex}
+\begin{enumerate}[(i)]
+\item $X= \P^1/K$, $n=2$
+	\[
+	\begin{tikzcd}
+	H^2(X_{\ov{K}}, \Q_p) \otimes \C_p \arrow[draw=none]{r}[sloped,auto=false]{\cong} & \left( H^2(X,\O_X) \otimes \C_p \right) \oplus \left( H^1(X,\Omega_X^1) \otimes \C_p(-1) \right) \oplus \left(H^0(X,\Omega_X^1) \otimes \C_p(-1) \right) \\
+	\O_p(-1) \otimes \C_p \arrow[draw=none]{u}[sloped,auto=false]{=} & 0 \oplus \C_p(-1) \oplus 0 \arrow[draw=none]{u}[sloped,auto=false]{=} \\
+	\C_p(-1)
+	\end{tikzcd}
+	\]
+
+\item $X=E$ elliptic curve over $K$
+	\[
+	\begin{tikzcd}
+	H^1(X_{\ov{K}},\Q_p) \otimes \C_p \arrow[draw=none]{r}[sloped,auto=false]{=} & \left(H^1(X,\O_X) \otimes_K \C_p \right) \oplus \left(H^0(X,\Omega_X^1) \otimes_K \C_p(-1) \right) \\
+	T_p(E)^\vee \otimes \C_p \arrow[draw=none]{u}[sloped,auto=false]{\cong} & \C_p  \oplus \C_p(-1) \arrow[draw=none]{u}[sloped,auto=false]{=}
+	\end{tikzcd}
+	\]
+$\Lie(E^r) \otimes \C_p$
+$\Lie(E)^\vee \otimes \C_p(-1)$
+\end{enumerate}
+\end{ex}
+
+\begin{cor}
+$X/K$ smooth projective then 
+	\[
+	H^i(X,\Omega^j_{X/K}) \cong \left( H^{i+j}(X_{\ov{K}}, \Q_p) \otimes \C_p(j) \right)^{G_K}
+	\]
+\end{cor}
+
+\begin{rem}
+Ito used this cor to reprove
+\end{rem}
+
+\begin{thm}
+$X,Y$ Calabi-Yao varieties over $\C$, $X \stackrel{\text{bir}}{\sim} Y$, then $\dim H^j(X,\Omega^i_{X/K})=:h^{i,j}(X) = h^{i,j}(Y)$
+\end{thm}
+
+\begin{rem}
+There exists a good variant for general $X$
+\end{rem}
+
+
+Hodge-Tate Spectral Sequence
+
+Use perfectoid spaces to prove
+
+\begin{thm}[HT,SS]
+$C/\Q_p$ complete and algebraically closed
+$X/C$ proper smooth rigid-analytic space
+then there exists an $E_2$ spectral sequence
+	\[
+	E_2^{ij}: H^i(X,\Omega^j_{X/C})(-j) \ma{} H^{i+j}(X,\Q_p) \otimes \C
+	\]
+then get Hodge-Tate filtration on $H^n(X,\Q_p) \otimes \C$
+\end{thm}
+
+
+\begin{rem}
+\begin{enumerate}[(i)]
+\item HT SS is functorial
+then if $X$ is defined over $K$ (with $K/\Q_p$ finite) then Tate's Theorem then get HT decomposition for $X$.
+
+\item the HT SS always degenerates (Conrad-Gabbor) but not canonically so:
+
+\begin{ex}
+Say $X= E$ elliptic curve.
+HT SS then low degree SES
+	\[
+	0 \ma{} H^1(X, \O_X) \ma{} H^1(X,\Q_p) \otimes \C_p \ma{} H^0(X,\Omega_X^1)(-1) \ma{} 0
+	\]
+maps go the wrong way
+cannot choose a splitting that varies well in family
+\end{ex}
+\end{enumerate}
+\end{rem}
+
+
+
+
+
+
+
+
+
+
+
