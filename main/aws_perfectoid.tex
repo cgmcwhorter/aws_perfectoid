@@ -2,7 +2,7 @@
 \usepackage[tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in]{geometry}
 \usepackage{../style/packages}
 \usepackage{../style/commands}
-\setbool{noteonly}{false}
+\setbool{notesonly}{false}
 
 % -------------------
 % Content
@@ -66,7 +66,7 @@
 % -------------------
 % Course/Project Outlines
 % -------------------
-\ifbool{noteonly}{}{%
+\ifbool{notesonly}{}{%
 \newpage
 \thispagestyle{empty}
 \part{Course/Project Outlines \& Lecture Notes}
@@ -74,16 +74,76 @@
 
 %\setcounter{section}{1}
 
-%% Poonen
-%\phantomsection
-%\addtocounter{section}{1}
-%\addcontentsline{toc}{section}{\protect\numberline{\thesection} Bjorn Poonen}
-%\phantomsection
-%\setcounter{subsection}{1}
-%\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Lecture Notes}
-%\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/poonen/p-adic_approach.pdf}
+% Bhatt
+\phantomsection
+\addtocounter{section}{1}
+\addcontentsline{toc}{section}{\protect\numberline{\thesection} Bhargav Bhatt: $p$-adic Hodge Theory}
+\phantomsection
+\setcounter{subsection}{1}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Course \& Project Outline}
+\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/bhatt/2017BhattOutline.pdf}
+\phantomsection
+\addtocounter{subsection}{1}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Lecture Notes \& Project Description}
+\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/bhatt/2017BhattNotes.pdf}
 
+
+% Caraiani
+\phantomsection
+\addtocounter{section}{1}
+\addcontentsline{toc}{section}{\protect\numberline{\thesection} Ana Caraiani: Shimura Varieties}
+\phantomsection
+\setcounter{subsection}{1}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Course \& Project Outline}
+\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/caraiani/2017CaraianiOutline.pdf}
+\phantomsection
+\addtocounter{subsection}{1}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Lecture Notes \& Project Description}
+\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/caraiani/2017CaraianiNotes.pdf}
+
+
+% Kedlaya
+\phantomsection
+\addtocounter{section}{1}
+\addcontentsline{toc}{section}{\protect\numberline{\thesection} Kiran Kedlaya: Sheaves, stacks, shtukas}
+\phantomsection
+\setcounter{subsection}{1}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Course \& Project Outline}
+\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/kedlaya/2017KedlayaOutline.pdf}
+\phantomsection
+\addtocounter{subsection}{1}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Lecture Notes \& Project Description}
+\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/kedlaya/2017KedlayaNotes.pdf}
+
+
+% Weinstein
+\phantomsection
+\addtocounter{section}{1}
+\addcontentsline{toc}{section}{\protect\numberline{\thesection} Jared Weinstein: Adic spaces}
+\phantomsection
+\setcounter{subsection}{1}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Course \& Project Outline}
+\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/weinstein/2017WeinsteinOutline.pdf}
+\phantomsection
+\addtocounter{subsection}{1}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Lecture Notes \& Project Description}
+\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/weinstein/2017WeinsteinNotes.pdf}
+
+
+% Problem Groups
+\phantomsection
+\addtocounter{section}{1}
+\addcontentsline{toc}{section}{\protect\numberline{\thesection} Problem Sessions}
+\phantomsection
+\setcounter{subsection}{1}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Yoichi Mieda: Adic spaces and perfectoid spaces}
+\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/problem_groups/2017MiedaProblems.pdf}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Hansheng Diao: Period rings and period sheaves (abridged, no hints)}
+\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/problem_groups/2017DiaoProblemsNH.pdf}
+\addcontentsline{toc}{subsection}{\protect\numberline{\thesubsection} Hansheng Diao: Period rings and period sheaves (extended)}
+\includepdf[pages=-,scale=1,pagecommand={\thispagestyle{normal}}]{../notes/problem_groups/2017DiaoProblems.pdf}
 }
+
 
 % -------------------
 % Bibliography

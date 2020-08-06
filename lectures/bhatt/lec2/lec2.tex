@@ -1,5 +1,231 @@
 % !TEX root = ../../../main/aws_perfectoid.tex
 \newpage
-\section{Name: Lecture Title}
-\subsection{Lecture 1}
-\subsubsection{Lecture Name}
+\subsection{Lecture 2}
+
+$C$ complet and algebraically closed over $\Q_p$
+
+$X/C$ proper smooth rigid-analytic space. 
+
+there exists an $E_2$ SES
+	\[
+	E_2^{ij}: H^i(X,\Omega^j_{X/C})(-j) \ma{} H^{i+j}(X,\O) \otimes \C
+	\]
+
+
+Strategy of the proof:
+
+\begin{enumerate}[1.]
+\item Construct a `cover' by perfectoid spaces
+	\[
+	\pi: X_\infty \ma{} X
+	\]
+and study the Hodge cohomology of $X_\infty$
+
+\item Descent back down to $X$. 
+\end{enumerate}
+
+\begin{ex}
+Say $K/\Q_p$ finite extension, $G_K= \Gal(\ov{K}/K)$.
+\end{ex}
+
+\begin{thm}
+$\cd_{\F_p}(G_K) \leq 2$, i.e. $H^i(G_K,M)=0$ for all $i>2$, $M$ $p$-torsion. 
+\end{thm}
+
+\pfsk Choose $K \ma{\Z_p} K_\infty \ma{} \ov{K}$. 
+
+
+Facts:
+
+\begin{enumerate}[1.]
+\item $\cd_{\F_p}(\Z_p) \leq 1$, explicitly calculate
+\item $\cd_{\F_p}(K_\infty) \leq 1$, use the titling correspondence to reduce to 1.
+\end{enumerate}
+
+
+\begin{prop}
+$R$ is any $\F_p$-algebra then $H^i(\spec(R)_\et, \F_p)= 0$ for all $i \geq 2$
+\end{prop}
+
+(1) $+$ (2) $+$ Hochschild-Serre gives Theorem.
+
+
+Hodge-Tate Decomposition for elliptic curves
+
+$K/\Q_p$ finite
+$\E/\O_K$ elliptic curve (so $E= \E_K$ has good reduction)
+$C= \hat{\ov{K}}$
+
+Goal for today:
+
+\begin{enumerate}[1.]
+\item Construct a $G_K$-equivalent map 
+	\[
+	\alpha: H^0(E, \Omega_{E/K}^1) \ma{} H^1(E_{\ov{K}}, \Q_p) \otimes C(1)
+	\]
+using arithmetic of $K$
+
+\item Construct a $G_K$-equivalent map
+	\[
+	H^1(E,\O_E) \ma{} H^1(E_{\ov{K}}, \Q_p) \otimes \C
+	\]
+using (inspiration from) perfectoid spaces
+\end{enumerate}
+
+
+Background facts
+
+\begin{enumerate}[1.]
+\item $H^1(E_{\ov{K}}, \Q_p) \cong T_p(E_{\ov{K}})^\vee \otimes \Q_p$, where $T_p(E_{\ov{K}}):= \plim_n E(\ov{K})[p^n]$
+
+\item $\E$ satisfies valuation criterion then $\E(\O_C) \ma{\sim} E(C)$
+
+\item Elliptic curves are $K(\pi,1)$'s
+	\[
+	H^i(E_{\ov{K}}, \Q_p) \cong H^i_{\text{ds}}(T_p(E),\Q_p)
+	\]
+
+\item $[n]: \E \to \E$ induces
+	\[
+	n^i= [n]^*: H^i(\E,\O_\E) \ma{} H^i(\E,\O_\E)
+	\]
+\end{enumerate}
+
+
+Construction of $\alpha$
+
+$K \subset \ov{K} \subset \hat{\ov{K}}= C$
+
+$\mu_{p^\infty} \subset \O_{\ov{K}}^* \ma{d \log} \Omega_{\O_{\ov{K}}/\O_K}^1$ 
+$f \mapsto df/f$
+
+Passing to Tate modules,
+
+$\Z_p(1):= T_p(\mu_{p^\infty}) \ma{d\log} \Omega= T_p(\Omega_{\O_l})^1$ as $\O_l$-module
+
+
+\begin{thm}[Fontaine]
+$d\log$ linearizes to a map
+	\[
+	\O_C(1)= \Z_p(1) \otimes_{\Z_p} \O_C \ma{} \Omega
+	\]
+which is injective, with torsion cokernel then invert $p$ 
+	\[
+	C(1) \ma{\sim} \Omega \left[ \dfrac{1}{p} \right]
+	\]
+\end{thm}
+
+
+Get a pairing
+	\[
+	E(\ov{K})= \E(\O_{\ov{K}}) \times H^0(\E,\Omega_{\E/\O_K}^1) \ma{} \Omega_{\O_{\ov{K}}/\O_K}^1
+	\]
+$(x: \spec(\O_{\ov{K}} \to \E, \omega) \mapsto x^*(\omega)$
+
+
+Check that this is bilinear
+
+	\[
+	\begin{tikzcd}
+	H^0(\E,\Omega^1_{\E/\O_K}) \arrow{r} \arrow{d} \arrow{rddddd} & \Hom(E(\ov{K}), \Omega^1_{\O_{\ov{K}}/\O_K}) \arrow{d}{\text{Apply } T_p(-)} \\
+	H^0(E,\Omega_{E/K}^1) \arrow{rdddd}{\alpha} & \Hom(T_p(E_{\ov{K}}), \Omega) \arrow[draw=none]{d}[sloped,auto=false]{\simeq} \\
+	& \underbrace{\Hom(T_p(E_{\ov{K}}), \Z_p)}_{H^1(E_{\ov{K}},\Z_p)} \otimes_{\Q_p} \Omega \arrow[draw=none]{d}[sloped,auto=false]{\simeq} \\
+	& H^1(E_{\ov{K}}, \Z_p) \otimes \Omega \arrow{d}{\text{Invert }p} \\
+	& H^1(E_{\ov{K}}, \Q_p) \otimes \underbrace{\Omega\left[\dfrac{1}{p}\right]}_{C(1)} \arrow[draw=none]{d}[sloped,auto=false]{\simeq} \\
+	& H^1(E_{\ov{K}}, \Q_p) \otimes C(1)
+	\end{tikzcd}
+	\]
+
+This is $G_K$-equivariant by construction
+
+
+\begin{rem}
+This construction makes sense for $\G_m$ as well
+	\[
+	\dfrac{dt}{t} \in H^0(\G_n, \Omega^1_{\G_m/\Z_p}) \ma{} H^1(\G_{m, \ov{\Q}_p}, \Q_p) \otimes C(1) = \Q_p(-1) \otimes C(1)= C
+	\]
+\end{rem}
+
+Exercise: Calculate image of $dt/t$
+
+
+
+Construction of $\beta$
+
+Fix $\E/\O_C$ elliptic curve, $E= \E_C$
+
+Goal: construct
+	\[
+	\beta: H^1(\E,\O_\E) \ma{} H^1(E, \Q_p) \otimes C
+	\]
+
+Consider
+	\[
+	( \cdots \ma{} \E \ma{[p]} \E \ma{[p]} \E)/ \O_C
+	\]
+then $\E_\infty=$ limit of above as schemes over $\O_C$.
+
+
+\begin{rem}
+$\E_\infty$ gives a perfectoid space on generic fibres. 
+\end{rem}
+
+Obs: $E(C)[p^n]= \E[p^n](\O_C)$ acts on $\E \ma{[p^n]} \E$
+
+Therefore, get an action of $T_p(E)$ on $\E_\infty$ that is equivariant for $\E_\infty \ma{\pi} \E$, bottom $\E$.
+
+Have $T_p(E)$ acts on $\E_\infty \ma{\pi} \E$
+
+Pullback of functions:
+	\[
+	H^0(\E,\O_\E) \ma{} H^0(\E_\infty, \O_{\E_\infty})^{T_p(E)}
+	\]
+
+Derive everything:
+	\[
+	R\Gamma(\E,\O_\E) \ma{\beta_0} R\Gamma_{\text{conts}}(T_p(E), R\Gamma(\E_\infty, \O_{\E_\infty})
+	\]
+
+
+Obs:
+	\[
+	\begin{aligned}
+	H^i(\E_\infty, \O_{\E_\infty})&= \dlim_{[p]^*} H^i(\E,\O_\E) \\
+	&= \begin{cases}
+	H^0(\E,\O_\E)= \O_C, & i=0 \\
+	H^1(\E,\O_\E)\left[\dfrac{1}{p}\right], & i=1 \\
+	0, & i>1
+	\end{cases}
+	\end{aligned}
+	\]
+derived completions
+	\[
+	R\Gamma(\E_\infty,\O_{\E_\infty})^\wedge \cong \O_C[0]
+	\]
+
+Therefore, we get
+	\[
+	\begin{tikzcd}
+	R\Gamma(\E,\O_\E) \arrow{r}{\beta_0} \arrow{rddd} & R\Gamma_{\text{cts}}(T_p(E), R\Gamma(\E_\infty, \O_{\E_\infty}) \arrow{d}{\text{complete}} \\
+	& R\Gamma_{\text{cts}}(T_p(E),\O_C) \arrow[draw=none]{d}[sloped,auto=false]{\simeq} \\
+	& R\Gamma(E, \O_C) \arrow[draw=none]{d}[sloped,auto=false]{=} \\
+	& R\Gamma(E,\Z_p) \otimes \O_C
+	\end{tikzcd}
+	\]
+
+In degree 1
+	\[
+	H^1(\E,\O_\E) \ma{\beta} H^1(E,\Z_p) \otimes \O_C
+	\]
+
+
+
+
+
+
+
+
+
+
+
+
